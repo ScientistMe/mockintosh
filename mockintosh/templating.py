@@ -18,7 +18,7 @@ from faker import Faker
 
 from mockintosh.constants import PYBARS, JINJA, JINJA_VARNAME_DICT, SPECIAL_CONTEXT
 from mockintosh.helpers import _to_camel_case
-from mockintosh.hbs.methods import HbsFaker, tojson, array, replace
+from mockintosh.hbs.methods import HbsFaker, tojson, fromjson, array, replace
 from mockintosh.j2.meta import find_undeclared_variables_in_order
 
 cov_no_import = environ.get('COVERAGE_NO_IMPORT', False)
@@ -138,6 +138,7 @@ class RenderingTask:
             self.inject_methods += [
                 tojson,
                 array,
+                fromjson,
                 replace
             ]
 
